@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月7日17:58:14
+        * 目的:   了解两种对象区别
+        * ---------------------------------
+        *       jQuery 对象只能使用 jQuery 方法
+        *       DOM 对象则使用原生的 JavaScirpt 属性和方法
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    // 1. DOM 对象：  用原生js获取过来的对象就是DOM对象
+    var myDiv = document.queryCommandEnabled("div");// myDiv 是DOM对象
+    // 2. jQuery对象： 用jquery方式获取过来的对象是jQuery对象。 本质：通过$把DOM元素进行了包装
+    $("div");// $('div')是一个jQuery 对象
+    // 3. jQuery 对象只能使用 jQuery 方法，DOM 对象则使用原生的 JavaScirpt 属性和方法
+    // $("div").hide();//jQuery对象隐藏方法
+    // myDiv.hide();//原生js没有,会报错
+    //同理,jQuery对象也无法使用原生js方法
+</script>
+</body>
+</html>
