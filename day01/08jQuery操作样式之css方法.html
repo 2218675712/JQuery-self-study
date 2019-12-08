@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script>
+        /*
+        *
+        * 时间:  2019年12月8日19:15:122
+        * 目的:   css样式操作
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    $(function () {
+        // 1.只有属性,能输出值
+        console.log($("div").css("width"));
+        //2.属性名和值,设置属性
+        $("div").css("width", "300px");
+        //3.批量添加
+        $("div").css({
+            "width": "400px",
+            "height": "400px",
+            "backgroundColor": "red",
+            // 如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号
+        });
+    });
+</script>
+</body>
+</html>

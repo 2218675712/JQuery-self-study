@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script>
+        /*
+        *
+        * 时间:  2019年12月8日19:27:44
+        * 目的:   css样式类的操作
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+
+        .current {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="current"></div>
+
+<script>
+    $(function () {
+        //1.添加类  addClass()
+        $("div").click(function () {
+            // (this).addClass("current");
+        });
+        //2.删除类  removeClass()
+        $("div").click(function () {
+            // $(this).removeClass("current");
+        });
+        //3.切换类  toggleClass()
+        $("div").click(function () {
+            $(this).toggleClass("current");
+        });
+
+    });
+</script>
+</body>
+</html>
