@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script>
+        /*
+        *
+        * 时间:  2019年12月8日16:45:33
+        * 目的:   jQuery的排他思想
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<button>按钮6</button>
+<button>按钮7</button>
+<button>按钮8</button>
+<script>
+    $(function () {
+        //隐式迭代  给所有的按钮都绑定了点击事件
+        $("button").click(function () {
+            //当前元素变换背景颜色
+            $(this).css("backgroundColor", "pink");
+            //其余的兄弟去掉背景颜色  隐释迭代
+            $(this).siblings("button").css("backgroundColor", "");
+        })
+    })
+</script>
+</body>
+</html>
