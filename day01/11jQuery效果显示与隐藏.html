@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script>
+        /*
+        *
+        * 时间:  2019年12月10日01:13:01
+        * 目的:  学会显示隐藏
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("div").show(1000);
+        });
+        $("button").eq(1).click(function () {
+            $("div").hide(1000);
+        });
+        $("button").eq(2).click(function () {
+            $("div").toggle(1000);
+        });
+    });
+</script>
+</body>
+</html>
