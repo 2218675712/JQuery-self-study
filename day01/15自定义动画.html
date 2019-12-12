@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月12日19:40:13
+        * 目的:   学习animate动画
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <style>
+        div {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button>点我</button>
+<div></div>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $("div").animate({
+                left: 300,
+                top: 300,
+                opacity: 0.4,
+                width: 500
+                //    逗号后面的是动画时间,单位为毫秒
+            }, 500);
+        });
+    });
+</script>
+</body>
+</html>
