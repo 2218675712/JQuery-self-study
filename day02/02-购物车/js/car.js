@@ -46,4 +46,15 @@ $(function () {
         //.parents()寻找多个上级,里面可以写元素
         $(this).parents(".p-num").siblings(".p-sum").text("￥" + price);
     });
+    $(".itxt").change(function () {
+    //先得到文本框里面的值,再乘以单价
+        var n=$(this).val();
+        //当前商品的单价
+        var p = $(this).parent().parent().siblings(".p-price").text();
+        p=p.substr(1);
+        var price = (p * n).toFixed(2);
+        $(this).parents(".p-num").siblings(".p-sum").text("￥" + price);
+
+
+    })
 })
