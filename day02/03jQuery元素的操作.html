@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月17日23:41:57
+        * 目的:   了解jQuery元素遍历
+        *
+        * 结果
+        * ---------------------------------
+        *
+        *
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    $(function () {
+        //要求:想给div每个字体给不同的颜色
+
+
+        var arr = ["red", "pink", "skyblue"];
+        // 如果针对于同一类元素做不同操作，需要用到遍历元素（类似for，但是比for强大）
+        $("div").each(function (index, domEle) {
+            // 回调函数第一个参数一定是索引号  可以自己指定索引号号名称
+            console.log(index);
+            // 回调函数第二个参数一定是 dom元素对象 也是自己命名
+            console.log(domEle);//注意是dom元素对象
+            $(domEle).css("color", arr[index]);//转为jQuery对象
+        })
+    })
+</script>
+</body>
+</html>
