@@ -27,6 +27,7 @@ $(function () {
         var price = (p * n).toFixed(2);
         //.parents()寻找多个上级,里面可以写元素
         $(this).parents(".p-num").siblings(".p-sum").text("￥" + price);
+        getSum();
     });
     //减运算
     $(".decrement").click(function () {
@@ -45,16 +46,33 @@ $(function () {
         var price = (p * n).toFixed(2);
         //.parents()寻找多个上级,里面可以写元素
         $(this).parents(".p-num").siblings(".p-sum").text("￥" + price);
+        getSum();
     });
     $(".itxt").change(function () {
-    //先得到文本框里面的值,再乘以单价
-        var n=$(this).val();
+        //先得到文本框里面的值,再乘以单价
+        var n = $(this).val();
         //当前商品的单价
         var p = $(this).parent().parent().siblings(".p-price").text();
-        p=p.substr(1);
+        p = p.substr(1);
         var price = (p * n).toFixed(2);
         $(this).parents(".p-num").siblings(".p-sum").text("￥" + price);
+        getSum();
+    });
 
 
-    })
+    // 计算总计和总额模块
+    getSum();
+
+    function getSum() {
+        var count = 0;  //计算总件数
+        var money = 0;  //计算总价格
+        $(".itxt").each(function (i, ele) {
+            count += Number($(ele).val());
+        });
+        $(".amount-sum em").html(count);
+        $(".p-sum").each(function (i, ele) {
+            money += Number($(ele).text().substr(1));
+        });
+        $(".price-sum em").html("￥"+money.toFixed(2));
+    }
 })
