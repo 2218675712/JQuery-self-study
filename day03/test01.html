@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月23日19:58:26
+        * 目的:   jQuery事件on
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .current{
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    $(function () {
+        //on方法      1.绑定一个或多个事件
+        /* $("div").on({
+             mouseout: function () {
+                 $(this).css("background", "red");
+             },
+             mouseover: function () {
+                 $(this).css("background", "skyblue");
+             },
+             click: function () {
+                 $(this).css("background", "purple");
+             }
+         });*/
+        // on       2.可以绑定1个或者多个事件处理程序
+        $("div").on("mouseenter mouseleave", function () {
+            $(this).toggleClass("current");
+        });
+
+    });
+
+</script>
+</body>
+</html>
