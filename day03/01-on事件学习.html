@@ -21,13 +21,24 @@
             height: 200px;
             background-color: pink;
         }
-        .current{
+
+        .current {
             background: skyblue;
         }
     </style>
 </head>
 <body>
 <div></div>
+<ul>
+    <li>我是li标签</li>
+    <li>我是li标签</li>
+    <li>我是li标签</li>
+</ul>
+<ol>
+    <li>我是li标签</li>
+    <li>我是li标签</li>
+    <li>我是li标签</li>
+</ol>
 <script>
     $(function () {
         //on方法      1.绑定一个或多个事件
@@ -42,11 +53,25 @@
                  $(this).css("background", "purple");
              }
          });*/
-        // on       2.可以绑定1个或者多个事件处理程序
-        $("div").on("mouseenter mouseleave", function () {
-            $(this).toggleClass("current");
-        });
 
+
+        // on       2.可以绑定1个或者多个事件处理程序
+        /*$("div").on("mouseenter mouseleave", function () {
+            $(this).toggleClass("current");
+        });*/
+
+        // (2) on可以实现事件委托（委派）
+        // click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
+        /*$("ul").on("click", "li", function () {
+            alert("11");
+        });*/
+
+        // (3) on可以给未来动态创建的元素绑定事件
+        $("ol").on("click", "li", function () {
+            alert("11");
+        });
+        var li = $("<li>我是有序li标签</li>");
+        $("ol").append(li);
     });
 
 </script>
