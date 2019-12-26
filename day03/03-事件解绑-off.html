@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月26日23:58:56
+        * 目的:   jQuery事件解绑
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<ul>
+    <li>点我</li>
+</ul>
+<p>只有一次</p>
+<script>
+    $(function () {
+        //给div绑定事件
+        $("div").on({
+            "click": function () {
+                console.log("我点击了");
+            },
+            "mouseover": function () {
+                console.log("我移动了");
+            }
+        });
+        // 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
+        $("ul").on("click", "li", function () {
+            alert("点个锤子");
+        });
+        // 1. 事件解绑 off
+        $("div").off();//解除div事件
+        $("div").off("click");//解除div点击事件
+        //移除ul的li的click的触发事件
+        $("ul").off("click", "li");
+        // 2. one() 但是它只能触发事件一次
+        $("p").one("click", function () {
+            alert(11);
+        })
+    })
+</script>
+</body>
+</html>
