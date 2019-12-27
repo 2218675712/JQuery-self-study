@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月27日20:58:02
+        * 目的:   jQuery自动绑定事件
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<div></div>
+<script>
+    $(function () {
+
+        $("div").on("click", function () {
+            alert("哈哈");
+        });
+
+        // 自动触发事件
+        // 1. 元素.事件()
+        // $("div").click();       //会触发元素的默认行为
+        //2.元素.trigger("事件")
+        //$("div").trigger("click");      //会触发元素的默认行为
+        // 3. 元素.triggerHandler("事件") 就是不会触发元素的默认行为
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月27日21:08:10
+        * 目的:   jQuery多库共存
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+<script>
+    $(function() {
+        function $(ele) {
+            return document.querySelector(ele);
+        }
+        console.log($("div"));
+        // 1. 如果$ 符号冲突 我们就使用 jQuery
+        jQuery.each();
+        // 2. 让jquery 释放对$ 控制权 让用自己决定
+        var suibian = jQuery.noConflict();
+        console.log(suibian("span"));
+        suibian.each();
+    })
+</script>
+</body>
+</html>

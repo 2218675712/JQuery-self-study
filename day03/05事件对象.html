@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2019年12月27日21:03:05
+        * 目的:   jQuery事件对象
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    $(function () {
+        $("div").on("click", function (event) {
+            console.log(event);
+            //阻止事件冒泡
+            event.stopPropagation();
+        })
+    })
+</script>
+</body>
+</html>
