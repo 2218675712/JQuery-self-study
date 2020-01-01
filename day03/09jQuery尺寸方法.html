@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 时间:   2020年1月1日19:47:49
+        * 目的:   jQuery尺寸方法
+        *
+        * 结果
+        * ---------------------------------
+        * ---------------------------------
+        * */
+    </script>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+            padding: 10px;
+            border: 10px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>我是div</div>
+<script>
+    $(function () {
+        // 1. width() / height() 获取设置元素 width和height大小
+        console.log($("div").width());
+        // $("div").width(500);     //设置值为500,不用加单位
+        // 2. innerWidth() / innerHeight()  获取设置元素 width和height + padding 大小
+        console.log($("div").innerWidth());
+        // 3. outerWidth()  / outerHeight()  获取设置元素 width和height + padding + border 大小
+        console.log($("div").outerWidth());
+        // 4. outerWidth(true) / outerHeight(true) 获取设置 width和height + padding + border + margin
+        console.log($("div").outerWidth(true));
+    })
+</script>
+</body>
+</html>
